@@ -7,8 +7,8 @@ namespace Maze
         static void Main(string[] args)
         {
             var size = 11;
-            var znakI = "#";
-            var znakJ = "-";
+            var znakI = "■";
+            var znakJ = "O";
             var pole = new string[size, size];
             for (int i = 0; i < pole.GetLength(0); i++)
             {
@@ -17,6 +17,10 @@ namespace Maze
                     if(j == 0 || j == size - 1 || i == 0 || i == size - 1) 
                     {
                         pole[i, j] = znakI;
+                    }
+                    else if(i%2 == 0 && j%2 == 0)
+                    {
+                        pole[i, j] = "X";
                     }
                     else
                     {
